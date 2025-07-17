@@ -16,8 +16,8 @@ int main(){
     lista.insertar(1,3);
     lista.insertar(2,4);
 
-    resultado = compac(lista);
-    std::cout<<resultado;
+    lista.shiftleft(4);
+    std::cout<<lista;
     return 0;
 }
 

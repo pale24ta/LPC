@@ -261,3 +261,34 @@ Lista<Element> Lista<Element>::concat(const Lista<Element> &l)
     return nueva;
 
 }
+
+
+template <class Element>
+inline void Lista<Element>::shiftleft(int pos)
+{
+    if(pos <= length){
+
+        Nodo<Element> *ant = NULL, *act = head;
+
+        int i;
+        for(i=1; i < pos && act != NULL && act->getNext(); i++)
+        {
+            ant = act;
+            act = act->getNext();
+        }
+
+        if(i == pos){
+            if(ant == NULL){
+                tail->setNext(head);
+                head->setNext(NULL);
+                head = tail;
+                tail = act;
+            }else{
+                tail->setNext(head);
+                ant->setNext(NULL);
+                head = act;
+                tail = ant;
+            }
+        }
+    }
+}

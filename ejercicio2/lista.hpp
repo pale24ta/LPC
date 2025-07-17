@@ -34,6 +34,7 @@ class Lista{
 
         void vaciar();
         void copiar(const Lista<Element> &c);
+        void shiftleft(int pos);
 
         void bubbleSort();
 
